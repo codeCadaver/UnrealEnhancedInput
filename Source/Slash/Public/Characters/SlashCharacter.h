@@ -28,6 +28,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	virtual void Jump() override;
+
 protected:
 	virtual void BeginPlay() override;
 
@@ -44,6 +46,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = Input)
 	UInputAction* LookAction;
+
+	UPROPERTY(EditAnywhere, Category = Input)
+	UInputAction* JumpAction;
 
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
